@@ -18,7 +18,7 @@ public class State {
     }
 
     public String[][] getBoard() {
-        return deepCopyBoard(board); // return a copy 
+        return deepCopyBoard(board); // return a copy of the copy(of the board in state which is a copy of original)
     }
 
     public void setCell(int row, int col, String value) {

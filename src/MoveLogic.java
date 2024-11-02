@@ -1,41 +1,17 @@
 public class MoveLogic {
     private State state;
+    private int level;
 
-    public MoveLogic(State state) {
+    public MoveLogic(State state, int level) {
         this.state = state;
+        this.level = level;
     }
 
     private String[][] board() {
-        return state.board;
         // access the board (which is a copy of the original),the copy itself,not a copy
         // of the copy..getBoard will bring a copy of the copy'
+        return state.board;
     }
-
-    // public void main(String[] args) throws Exception {
-
-    // for (int i = 0; i < board.length; i++) {
-    // for (int j = 0; j < board[i].length; j++) {
-    // System.out.print(board[i][j] + " ");
-    // }
-    // System.out.println();
-    // //
-    // }
-    // System.out.println();
-
-    // // System.out.println(colorsCount(1, 0, 1, 5));
-    // moveOneColorDown(0, 5, "o");
-    // // System.out.println(colorsCount(1, 1, 1, 5));
-
-    // // Point closeWall = findClosestWall(1, 3, 'd');
-    // // System.out.println(closeWall.row + " " + closeWall.col);
-    // // System.out.println(colorsCount(0, 1, 3, 1));
-    // // System.out.println(canMove(5,7,'u'));
-    // // Point p=checkGoal(0,3,0,1,'b','l');
-    // // System.out.println(p.row+" "+p.col);
-
-    // }
-
-    // ...............................................................................................................................
 
     // function takes in coordinates and direction then returns Point that represent
     // closest wall in that direction
@@ -106,7 +82,7 @@ public class MoveLogic {
             int rindex = r1 != r2 ? i : r1;
             int cindex = c1 != c2 ? i : c1;
             if (!board[rindex][cindex].equals(" ") && board[rindex][cindex].charAt(0) != 'G'
-                    && !board[rindex][cindex].equals("w")) {
+                    && !board[rindex][cindex].equals("w")) {// here new
                 count++;
             }
         }
@@ -147,7 +123,7 @@ public class MoveLogic {
         String[][] board = board();
         switch (direction) {
             case 'l':
-                return c - 1 >= 0 && (board[r][c - 1].equals(" ") || board[r][c - 1].charAt(0) == 'G');
+                return c - 1 >= 0 && (board[r][c - 1].equals(" ") || board[r][c - 1].charAt(0) == 'G');// here new
             case 'r':
                 return c + 1 < board[r].length && (board[r][c + 1].equals(" ") || board[r][c + 1].charAt(0) == 'G');
             case 'u':
@@ -173,21 +149,25 @@ public class MoveLogic {
 
         // case no goal
         if (itsGoal.row == -1) {
-            board()[r][c] = " ";
-            board()[wallRow][wallCol-colorsCount-1] = (closeWall.col == -1) ? " " : color;
+            //old to check if it was a goal before,i only care for this when moving from the current place not the distance
+            char old = wasGoal(r, c);
+            board()[r][c] = (old == ' ') ? " " : "G" + old;
+            board()[wallRow][wallCol - colorsCount - 1] = (closeWall.col == -1) ? " " : color;
         }
         // case there is goal
         else {
             // if places between wall and goal fit for all other colors,so the color can
             // make it to its goal without it being blocked
             if (Math.abs(itsGoal.col - wallCol - 1) >= colorsCount) {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 board()[itsGoal.row][itsGoal.col] = " ";
                 System.out.println("The Color " + color + " met its goal");
             }
             // other colors will block the goal of the color//not in case of no wall
             else {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
                     // it will meet the goal
                     board()[itsGoal.row][itsGoal.col] = " ";
@@ -211,7 +191,8 @@ public class MoveLogic {
         // case no goal for it
         if (itsGoal.row == -1) {
             // System.out.println("case no goal");
-            board()[r][c] = " ";
+            char old = wasGoal(r, c);
+            board()[r][c] = (old == ' ') ? " " : "G" + old;
             board()[wallRow][wallCol + colorsCount + 1] = (closeWall.row == -1) ? " " : color;
         }
         // case there is goal
@@ -219,14 +200,16 @@ public class MoveLogic {
             // if places between wall and goal fit for all other colors,so the color can
             // make it to its goal without it being blocked
             if (Math.abs(itsGoal.col - 1 - wallCol) >= colorsCount) {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 board()[itsGoal.row][itsGoal.col] = " ";
                 System.out.println("The Color " + color + " met its goal");
             }
             // other colors will block the goal of the color
             // in case of no wall,they wont block it
             else {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
                     // it will meet the goal
                     board()[itsGoal.row][itsGoal.col] = " ";
@@ -246,11 +229,12 @@ public class MoveLogic {
         int wallCol = (closeWall.col == -1) ? c : closeWall.col;
 
         int colorsCount = colorsCount(r, c, wallRow, wallCol);
-        Point itsGoal = checkGoal(r, c,  wallRow, wallCol, color, 'u');
-       
+        Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'u');
+
         // case no goal
         if (itsGoal.row == -1) {
-            board()[r][c] = " ";
+            char old = wasGoal(r, c);
+            board()[r][c] = (old == ' ') ? " " : "G" + old;
             board()[wallRow + colorsCount + 1][wallCol] = (closeWall.row == -1) ? " " : color;
         }
         // case there is goal
@@ -258,22 +242,23 @@ public class MoveLogic {
             // if places between wall and goal fit for all other colors,so the color can
             // make it to its goal without it being blocked
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 board()[itsGoal.row][itsGoal.col] = " ";
                 System.out.println("The Color " + color + " met its goal");
             }
             // other colors will block the goal of the color,but not case of no wall
             else {
-                board()[r][c] = " ";
-                if(closeWall.col==-1){
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
+                if (closeWall.col == -1) {
                     // it will meet the goal
                     board()[itsGoal.row][itsGoal.col] = " ";
                     System.out.println("The Color " + color + " met its goal");
+                } else {
+                    board()[wallRow + colorsCount + 1][wallCol] = color;
                 }
-                else{
-                   board()[wallRow + colorsCount + 1][wallCol] = color; 
-                }
-                
+
             }
         }
     }
@@ -285,32 +270,34 @@ public class MoveLogic {
         int wallCol = (closeWall.col == -1) ? c : closeWall.col;
 
         int colorsCount = colorsCount(r, c, wallRow, wallCol);
-        Point itsGoal = checkGoal(r, c,  wallRow, wallCol, color, 'd');
-        
+        Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'd');
+
         // case no goal
         if (itsGoal.row == -1) {
-            board()[r][c] = " ";
+            char old = wasGoal(r, c);
+            board()[r][c] = (old == ' ') ? " " : "G" + old;
             board()[wallRow - colorsCount - 1][wallCol] = (closeWall.row == -1) ? " " : color;
         }
-        
+
         // case there is goal
         else {
             // if places between wall and goal fit for all other colors,so the color can
             // make it to its goal without it being blocked
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
-                board()[r][c] = " ";
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
                 board()[itsGoal.row][itsGoal.col] = " ";
                 System.out.println("The Color " + color + " met its goal");
             }
             // other colors will block the goal of the color
             else {
-                board()[r][c] = " ";
-                if(closeWall.col==-1){
+                char old = wasGoal(r, c);
+                board()[r][c] = (old == ' ') ? " " : "G" + old;
+                if (closeWall.col == -1) {
                     // it will meet the goal
                     board()[itsGoal.row][itsGoal.col] = " ";
                     System.out.println("The Color " + color + " met its goal");
-                }
-                else{
+                } else {
                     board()[wallRow - colorsCount - 1][wallCol] = color;
                 }
             }
@@ -330,7 +317,6 @@ public class MoveLogic {
     }
 
     // .......................................................................................................
-    // move All
     public void moveAllColors(char direction) {
         String[][] board = board();
 
@@ -360,24 +346,25 @@ public class MoveLogic {
         for (int i = rowStart; i != rowEnd; i += rowStep) {
             for (int j = colStart; j != colEnd; j += colStep) {
                 // if color
-                if (!board[i][j].equals(" ") && board[i][j].charAt(0) != 'G' && !board[i][j].equals("w")) {
+                if (!board[i][j].equals(" ") && board[i][j].charAt(0) != 'G' && !board[i][j].equals("w")) {// check here
+                                                                                                           // new here
                     if (canMove(i, j, direction)) {
                         switch (direction) {
                             case 'r':
                                 moveOneColorRight(i, j, board[i][j]);
-                                printBoard(board);
+                                // printBoard(board);
                                 break;
                             case 'l':
                                 moveOneColorLeft(i, j, board[i][j]);
-                                printBoard(board);
+                                // printBoard(board);
                                 break;
                             case 'u':
                                 moveOneColorUp(i, j, board[i][j]);
-                                printBoard(board);
+                                // printBoard(board);
                                 break;
                             case 'd':
                                 moveOneColorDown(i, j, board[i][j]);
-                                printBoard(board);
+                                // printBoard(board);
                                 break;
                         }
                     }
@@ -386,4 +373,45 @@ public class MoveLogic {
         }
     }
 
+    // .......................................................................................................
+    public boolean isFinal(String[][] board) {
+        int colorsCount = 0;
+        int goalsCount = 0;
+
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                // if color
+                if (!board[i][j].equals(" ") && board[i][j].charAt(0) != 'G' && !board[i][j].equals("w")) {// here new
+                    colorsCount++;
+                }
+                // if goal
+                else if (board[i][j].charAt(0) == 'G') {
+                    goalsCount++;
+                }
+            }
+        }
+        if (colorsCount == 0) {
+            if (goalsCount == 0) {
+                System.out.println("You Win!");
+            } else {
+                System.out.println("You Lost!");
+            }
+            return true;
+        }
+        return false;
+    }
+
+    // .......................................................................................................
+    Boards boards = new Boards();
+    String[][] copyFromOriginal = boards.getCopiedBoard(level);
+
+    public char wasGoal(int r, int c) {
+        // if in the original its goal,note that it wont be its own goal,cause it wont
+        // be above it,they shouldve gone
+        if (copyFromOriginal[r][c].charAt(0) == 'G') {
+            char color = copyFromOriginal[r][c].charAt(1);
+            return color;
+        }
+        return ' ';
+    }
 }
