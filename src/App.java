@@ -12,16 +12,16 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int level = scanner.nextInt() - 1;
 
-        // BRING THE BOARD
+        // bring the board
         Boards boards = new Boards();
-        String[][] board = boards.getBoard(level);//this is original
+        String[][] board = boards.getBoard(level);// this is original
 
         // send it to the state class to let it deal with it within its functions(print
         // for ex)
-        State initialState  = new State(board);
-        initialState .printBoard();
+        State initialState = new State(board);
+        initialState.printBoard();
 
-        MoveLogic moveLogic = new MoveLogic(initialState , level);
+        MoveLogic moveLogic = new MoveLogic(initialState, level);
 
         // print to user
         System.out.println("Use 'w' for UP, 'a' for LEFT, 's' for DOWN, 'd' for RIGHT. Press 'q' to quit.");
@@ -32,24 +32,29 @@ public class App {
             char input = scanner.next().charAt(0);
 
             switch (input) {
-                case 'a': 
+                case 'a':
                     // currentState=moveLogic.moveAllColors('l');
                     moveLogic.moveAllColors('l');
                     break;
-                case 'd': 
+                case 'd':
                     // currentState=moveLogic.moveAllColors('r');
                     moveLogic.moveAllColors('r');
                     break;
-                case 'w': 
+                case 'w':
                     // currentState=moveLogic.moveAllColors('u');
                     moveLogic.moveAllColors('u');
                     break;
-                case 's': 
+                case 's':
                     // currentState=moveLogic.moveAllColors('d');
                     moveLogic.moveAllColors('d');
                     break;
                 case '1':
+                    System.out.println("This is what your board looks like in case of each move: ");
                     moveLogic.possibleMoves();
+                    break;
+                case 'y':
+                    System.out.println(Boards.initGoals.get(4)); 
+                    break;
                 case 'q': // quit
                     System.out.println("Exiting game.");
                     scanner.close();
