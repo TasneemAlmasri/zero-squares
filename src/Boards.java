@@ -73,13 +73,13 @@ public class Boards {
             },
             // 8
             // four colors
-            // {
-            //         { " ", " ", " ", "W", "W", "W", "W", " ", " " },
-            //         { "W", "W", "W", "W", "o", "Gy", "W", "W", "W" },
-            //         { "W", "Gb", "p", "b", " ", " ", " ", " ", "W" },
-            //         { "W", " ", "g", "W", "Go", " ", "W", "y", "W" },
-            //         { "W", "W", "W", "W", "W", "W", "W", "W", "W" },
-            // },
+            {
+                    { " ", " ", " ", "W", "W", "W", "W", " ", " " },
+                    { "W", "W", "W", "W", "o", "Gy", "W", "W", "W" },
+                    { "W", "Gb", "p", "b", " ", " ", " ", " ", "W" },
+                    { "W", " ", "g", "W", "Go", " ", "W", "y", "W" },
+                    { "W", "W", "W", "W", "W", "W", "W", "W", "W" },
+            },
             // 9
             // four open walls
             {
@@ -140,38 +140,9 @@ public class Boards {
         if (level >= 0 && level < initBoards.length) {
             return initBoards[level];
         } else {
-            System.err.println("No Such level");
+            System.out.println("No Such level");
             return null;
         }
-    }
-
-    public String[][] getCopiedBoard(int level) {
-        // System.out.println("iam in getCopied in Boards LEVEL
-        // ISSSSSSSSSSSSSSSS"+level);
-        if (level >= 0 && level < initBoards.length) {
-            String[][] original = initBoards[level];// initBoards[level]
-            String[][] theCopy = new String[original.length][];
-
-            for (int i = 0; i < original.length; i++) {
-                theCopy[i] = original[i].clone();
-            }
-
-            // print the copy
-            for (int i = 0; i < theCopy.length; i++) {
-                for (int j = 0; j < theCopy[i].length; j++) {
-                    System.out.print(theCopy[i][j] + " ");
-                }
-                System.out.println();
-                //
-            }
-            System.out.println();
-
-            return theCopy;
-        } else {
-            System.err.println("No Such level");
-            return null;
-        }
-
     }
 
 }

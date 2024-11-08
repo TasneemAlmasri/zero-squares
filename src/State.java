@@ -1,12 +1,12 @@
 public class State {
 
     String[][] board;
-    // instead of assigning it directly to the board,i ll make a copy of it
+    
     public State(String[][] board) {
-        this.board = deepCopyBoard(board);
+        this.board = copyBoard(board);
     }
 
-    private String[][] deepCopyBoard(String[][] original) {
+    private String[][] copyBoard(String[][] original) {
         if (original == null) {
             return null;
         }
@@ -17,7 +17,7 @@ public class State {
         return theCopy;
     }
 
-    public State cloneState() {
+    public State copyState() {
         return new State(this.board);
     }
 
