@@ -14,54 +14,28 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int level = scanner.nextInt() - 1;
 
-        Boards boards = new Boards();
-        String[][] board = boards.getBoard(level);
+        System.out.println("Choose 1 for player mode or 2 for computer mode :");
+        int mode=scanner.nextInt();
 
+        String[][] board = Boards.getBoard(level);
         State initialState = new State(board);
         initialState.printBoard();
 
-        MoveLogic moveLogic = new MoveLogic(initialState, level);
+        Player playerMode=new Player(initialState, level, path);
+        Algo computerMode=new Algo(initialState, level, path);
 
-        System.out.println("Use 'w' for UP, 'a' for LEFT, 's' for DOWN, 'd' for RIGHT, '1' for help. Press 'q' to quit.");
-
-        while (true) {
-            System.out.print("Enter a direction: ");
-            char input = scanner.next().charAt(0);
-
-            switch (input) {
-                case 'a':
-                    // currentState=moveLogic.moveAllColors('l');
-                    path.add(moveLogic.moveAllColors('l',false)); 
-                    break;
-                case 'd':
-                    // currentState=moveLogic.moveAllColors('r');
-                    path.add(moveLogic.moveAllColors('r',false));
-                    break;
-                case 'w':
-                    // currentState=moveLogic.moveAllColors('u');
-                    path.add(moveLogic.moveAllColors('u',false));
-                    break;
-                case 's':
-                    // currentState=moveLogic.moveAllColors('d');
-                    path.add(moveLogic.moveAllColors('d',false));
-                    break;
-                case '1':
-                    System.out.println("These are the possible moves: ");
-                    moveLogic.possibleMoves();
-                    break;
-                case 'p':
-                    moveLogic.printPath();
-                    break;
-                case 'q': // quit
-                    System.out.println("Exiting game.");
-                    scanner.close();
-                    return;
-                default:
-                    System.out.println("Invalid input. Use 'w', 'a', 's', 'd' to move,'1' for help, or 'q' to quit.");
-                    continue;
-            }
+        switch (mode) {
+            case 1:
+            playerMode.playPlayer();
+                break;
+            case 2:
+            computerMode.playComputer();
+                break;
+            default:
+            System.out.println("Wrong Input");
+                break;
         }
-
+        scanner.close();
     }
 
 }

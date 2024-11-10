@@ -3,7 +3,9 @@
 //first with state
 //sec with adj without staet
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MoveLogic {
     private State currentstate;
@@ -456,7 +458,7 @@ public class MoveLogic {
             newState.printBoard();
         }
 
-        if (isFinal(board,testing) && !testing) {
+        if (isFinal(board, testing) && !testing) {
             System.exit(0);
         }
         // return the new state after moving
@@ -596,39 +598,43 @@ public class MoveLogic {
         }
     }
 
-    public List<State> possibleMoves() {
+    public Map<Character, State> nexStates(boolean wannaPrint) {
         boolean testing = true;
         // to go back to it
         State originalState = currentstate.copyState();
 
-        List<State> possibleStates = new ArrayList<>();
+        // Map< State,Character>posStateAndDirection=new LinkedHashMap<>();
+        Map<Character, State> possibleStates = new LinkedHashMap<>();
 
         State leftCase = moveAllColors('l', testing);
         if (!isEqual(leftCase, originalState)) {
-            possibleStates.add(leftCase);
+            possibleStates.put('l', leftCase);
         }
         currentstate = originalState.copyState();
 
         State rightCase = moveAllColors('r', testing);
         if (!isEqual(rightCase, originalState)) {
-            possibleStates.add(rightCase);
+            possibleStates.put('r', rightCase);
         }
         currentstate = originalState.copyState();
 
         State upCase = moveAllColors('u', testing);
         if (!isEqual(upCase, originalState)) {
-            possibleStates.add(upCase);
+            possibleStates.put('u', upCase);
         }
         currentstate = originalState.copyState();
 
         State downCase = moveAllColors('d', testing);
         if (!isEqual(downCase, originalState)) {
-            possibleStates.add(downCase);
+            possibleStates.put('d', downCase);
         }
         currentstate = originalState.copyState();
         // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
-        for (State s : possibleStates) {
-            printBoard(s.board);
+        if (wannaPrint) {
+            for (char c : possibleStates.keySet()) {
+                System.out.println("In case of " + c + " :");
+                printBoard(possibleStates.get(c).board);
+            }
         }
 
         return possibleStates;
@@ -656,8 +662,8 @@ public class MoveLogic {
         return true;
     }
 
-    public void printPath() {
-        List<State> path = App.path;
+    public void printPath(List<State> path) {
+        // List<State> path = App.path;
         if (path.isEmpty()) {
             System.out.println("you did not take any actions yet");
             return;

@@ -82,20 +82,20 @@ public class Boards {
             },
             // 9
             // four open walls
-            {
-                    { "W", "W", "W", "W", "W", "W", "W", "W", " ", " ", " " },
-                    { "W", "o", " ", "W", " ", " ", "b", "W", " ", " ", " " },
-                    { " ", " ", " ", "Go", " ", " ", " ", " ", " ", " ", " " },
-                    { "W", "Gy", " ", " ", " ", "Gb", " ", "W", "W", "W", "W" },
-                    { "W", " ", " ", " ", " ", "W", " ", " ", " ", " ", "W" },
-                    { "W", "W", "W", "W", "W", "W", "W", "W", " ", " ", "W" },
-                    { " ", " ", " ", " ", " ", " ", " ", " ", " ", "y", "W" },
-                    { " ", " ", " ", " ", " ", " ", " ", "W", " ", "W", "W" },
-            },
+        //     {
+        //             { "W", "W", "W", "W", "W", "W", "W", "W", " ", " ", " " },
+        //             { "W", "o", " ", "W", " ", " ", "b", "W", " ", " ", " " },
+        //             { " ", " ", " ", "Go", " ", " ", " ", " ", " ", " ", " " },
+        //             { "W", "Gy", " ", " ", " ", "Gb", " ", "W", "W", "W", "W" },
+        //             { "W", " ", " ", " ", " ", "W", " ", " ", " ", " ", "W" },
+        //             { "W", "W", "W", "W", "W", "W", "W", "W", " ", " ", "W" },
+        //             { " ", " ", " ", " ", " ", " ", " ", " ", " ", "y", "W" },
+        //             { " ", " ", " ", " ", " ", " ", " ", "W", " ", "W", "W" },
+        //     },
 
     };
     static Map<Integer, Map<Point, String>> initGoals = new HashMap<>();
-    {
+    static{
         initGoals.put(0, Map.of(
                 new Point(1, 6), "Go"));
         initGoals.put(1, Map.of(
@@ -123,16 +123,19 @@ public class Boards {
     }
 
     static String getGoal(int r, int c, int level) {
-        Map<Point, String> goals = initGoals.get(level);
+        // System.out.println("i ma in get goal and r "+r+" "+c+" level "+level);
 
+        Map<Point, String> goals = initGoals.get(level);
+        
         if (goals != null) {
             for (Point goal : goals.keySet()) {
+                // System.out.println("soy inside la loop goal is at "+goal.row+" "+goal.col);
                 if (goal.row == r && goal.col == c) {
+                        // System.out.println("i foubd a goal");
                     return goals.get(goal);
                 }
             }
         }
-
         return "";
     }
 
