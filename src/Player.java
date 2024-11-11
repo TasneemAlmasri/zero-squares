@@ -18,7 +18,7 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
         MoveLogic moveLogic = new MoveLogic(initialState, level);
         
-        System.out.println("Use 'w' for UP, 'a' for LEFT, 's' for DOWN, 'd' for RIGHT, '1' for help. Press 'q' to quit.");
+        System.out.println("press 'w' for up, 'a' for left, 's' for down, 'd' for right, '1' for help . Press 'q' to quit.");
 
         while (true) {
             System.out.print("Enter a direction: ");

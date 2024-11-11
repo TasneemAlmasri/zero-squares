@@ -20,16 +20,15 @@ public class Algo {
         System.out.println("Please click :\n 1-for Dfs \n 2-for Bfs ");
         int algo = scanner.nextInt();
 
-        Dfs dfs=new Dfs(initialState, level);
-        Bfs bfs=new Bfs(initialState, level);
+        // Dfs dfs=new Dfs(initialState, level);
 
         switch (algo) {
             case 1:
-                dfs.dfsOn();
+                // dfs.dfsOn();
                 break;
 
             case 2:
-                bfs.BfsOn();
+                // bfs
                 break;
 
             default:

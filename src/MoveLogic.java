@@ -1,7 +1,3 @@
-
-//this is with state and with code adjusment
-//first with state
-//sec with adj without staet
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -18,8 +14,6 @@ public class MoveLogic {
         // ISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs"+level);
     }
 
-    // function takes in coordinates and direction then returns Point that represent
-    // closest wall in that direction
     Point findClosestWall(int row, int col, char direction, String[][] board) {
         // System.out.println("row is = " + row + " and col is= " + col + " and
         // board.length= " + board.length
@@ -27,7 +21,6 @@ public class MoveLogic {
         if (row >= 0 && row < board.length && col < board[row].length && col >= 0)// valid point
         {
             // System.out.println("iam in the if");
-            // if we want the closest to the left
             if (direction == 'l') {
                 for (int i = col - 1; i >= 0; i--) {
                     if (board[row][i].equals("W")) {
@@ -35,7 +28,6 @@ public class MoveLogic {
                     }
                 }
             }
-            // if we want the closest to the rihgt
             else if (direction == 'r') {
                 for (int i = col + 1; i < board[row].length; i++) {
                     if (board[row][i].equals("W")) {
@@ -43,7 +35,6 @@ public class MoveLogic {
                     }
                 }
             }
-            // if we want the closest in the up
             else if (direction == 'u') {
                 for (int i = row - 1; i >= 0; i--) {
                     if (board[i][col].equals("W")) {
@@ -51,7 +42,6 @@ public class MoveLogic {
                     }
                 }
             }
-            // if we want the closest below
             else if (direction == 'd') {
                 for (int i = row + 1; i < board.length; i++) {
                     if (board[i][col].equals("W")) {
@@ -63,16 +53,13 @@ public class MoveLogic {
         return new Point(-1, -1);
     }
 
-    // takes in a color square and the closest wall to it then returns the count of
-    // color squares between them
     int colorsCount(int r1, int c1, int r2, int c2, String[][] board) {
         int start, end;
-        // so col are the same and its up down case
         if (r1 != r2) {
             start = Math.min(r1, r2);
             end = Math.max(r1, r2);
         }
-        // when the same row,so left right case
+        
         else {
             start = Math.min(c1, c2);
             end = Math.max(c1, c2);
@@ -80,11 +67,9 @@ public class MoveLogic {
 
         int count = 0;
         for (int i = start + 1; i < end; i++) {
-            // two lines to know if im looping in rows or cols(i have start and end,but dont
-            // know in board[][] who is i and who is constant)
             int rindex = r1 != r2 ? i : r1;
             int cindex = c1 != c2 ? i : c1;
-            if (Character.isLowerCase(board[rindex][cindex].charAt(0))) // if color
+            if (Character.isLowerCase(board[rindex][cindex].charAt(0))) 
             {
                 count++;
             }
@@ -93,24 +78,17 @@ public class MoveLogic {
 
     }
 
-    // check if my goal exists in the area between me and the wall(dont want it if
-    // its after the wall)
     Point checkGoal(int r1, int c1, int r2, int c2, String color, char direction, String[][] board) {
         int start, end;
-        // so col are the same and its up down case
         if (r1 != r2) {
             start = Math.min(r1, r2);
             end = Math.max(r1, r2);
         }
-        // when the same row,so left right case
         else {
             start = Math.min(c1, c2);
             end = Math.max(c1, c2);
         }
         for (int i = start + 1; i < end; i++) {
-            // coming two lines to know if im looping in rows or cols(i have start and
-            // end,but dont
-            // know in board[][] who is i and who is constant)
             int rindex = r1 != r2 ? i : r1;
             int cindex = c1 != c2 ? i : c1;
             if (board[rindex][cindex].charAt(0) == 'G' && board[rindex][cindex].charAt(1) == color.charAt(0)) {
@@ -141,9 +119,6 @@ public class MoveLogic {
         }
     }
 
-    // .......................................................................................................
-    // move one color,these functions wont be called unless the square CAN (not near
-    // wall or another color) move in the needed direction
     List<Point> removedGoals = new ArrayList<>();
 
     void moveOneColorRight(int r, int c, String color, String[][] board, List<Point> movableCells) {
@@ -165,10 +140,7 @@ public class MoveLogic {
         Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'r', board);
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
-        // case no goal
         if (itsGoal.row == -1) {
-            // old to check if it was a goal before,i only care for this when moving from
-            // the current place not the distance
             char old = wasGoal(r, c);
             board[r][c] = (old == ' ') ? " " : "G" + old;
             if (closeWall.col != -1) {
@@ -176,10 +148,7 @@ public class MoveLogic {
             }
 
         }
-        // case there is goal
         else {
-            // if places between wall and goal fit for all other colors,so the color can
-            // make it to its goal without it being blocked
             if (Math.abs(itsGoal.col - wallCol - 1) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -187,7 +156,6 @@ public class MoveLogic {
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             }
-            // other colors will block the goal of the color//not in case of no wall
             else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -222,7 +190,6 @@ public class MoveLogic {
         Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'l', board);
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
-        // case no goal for it
         if (itsGoal.row == -1) {
             // System.out.println("case no goal");
             char old = wasGoal(r, c);
@@ -232,10 +199,7 @@ public class MoveLogic {
             }
 
         }
-        // case there is goal
         else {
-            // if places between wall and goal fit for all other colors,so the color can
-            // make it to its goal without it being blocked
             if (Math.abs(itsGoal.col - 1 - wallCol) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -243,13 +207,10 @@ public class MoveLogic {
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             }
-            // other colors will block the goal of the color
-            // in case of no wall,they wont block it
             else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
-                    // it will meet the goal
                     board[itsGoal.row][itsGoal.col] = " ";
                     removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                     System.out.println("The Color " + color + " met its goal");
@@ -280,7 +241,6 @@ public class MoveLogic {
         Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'u', board);
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
-        // case no goal
         if (itsGoal.row == -1) {
             char old = wasGoal(r, c);
             board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -289,10 +249,7 @@ public class MoveLogic {
             }
 
         }
-        // case there is goal
         else {
-            // if places between wall and goal fit for all other colors,so the color can
-            // make it to its goal without it being blocked
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -300,12 +257,10 @@ public class MoveLogic {
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             }
-            // other colors will block the goal of the color,but not case of no wall
             else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
-                    // it will meet the goal
                     board[itsGoal.row][itsGoal.col] = " ";
                     removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                     System.out.println("The Color " + color + " met its goal");
@@ -336,7 +291,6 @@ public class MoveLogic {
         Point itsGoal = checkGoal(r, c, wallRow, wallCol, color, 'd', board);
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
-        // case no goal
         if (itsGoal.row == -1) {
             char old = wasGoal(r, c);
             board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -346,10 +300,7 @@ public class MoveLogic {
 
         }
 
-        // case there is goal
         else {
-            // if places between wall and goal fit for all other colors,so the color can
-            // make it to its goal without it being blocked
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
@@ -357,12 +308,10 @@ public class MoveLogic {
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             }
-            // other colors will block the goal of the color
             else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
-                    // it will meet the goal
                     board[itsGoal.row][itsGoal.col] = " ";
                     removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                     System.out.println("The Color " + color + " met its goal");
@@ -373,7 +322,6 @@ public class MoveLogic {
         }
     }
 
-    // print passed board
     public void printBoard(String[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -389,18 +337,13 @@ public class MoveLogic {
         System.out.println();
     }
 
-    // .......................................................................................................
     public State moveAllColors(char direction, boolean testing) {
-        // clone the current state
         State newState = currentstate.copyState();
         String[][] board = newState.board;
-        // in case of up or left i want to iterate form top left
-        // (ex in case of left,i want the closest to left to be processed first)
         int rStart, rEnd, rStep;
         int cStart, cEnd, cStep;
 
         if (direction == 'r' || direction == 'd') {
-            // bottom right to up
             rStart = board.length - 1;
             rEnd = -1;
             rStep = -1;
@@ -408,7 +351,6 @@ public class MoveLogic {
             cEnd = -1;
             cStep = -1;
         } else {
-            // top left then down
             rStart = 0;
             rEnd = board.length;
             rStep = 1;
@@ -421,7 +363,6 @@ public class MoveLogic {
 
         for (int i = rStart; i != rEnd; i += rStep) {
             for (int j = cStart; j != cEnd; j += cStep) {
-                // if color
                 if (Character.isLowerCase(board[i][j].charAt(0))) {
                     if (canMove(i, j, direction, board)) {
                         movableCells.add(new Point(i, j));
@@ -452,7 +393,6 @@ public class MoveLogic {
                     break;
             }
         }
-        // update the current state to the new state
         this.currentstate = newState;
         if (!testing) {
             newState.printBoard();
@@ -461,22 +401,18 @@ public class MoveLogic {
         if (isFinal(board, testing) && !testing) {
             System.exit(0);
         }
-        // return the new state after moving
         return newState;
     }
 
-    // .......................................................................................................
     public boolean isFinal(String[][] board, boolean testing) {
         int colorsCount = 0;
         int goalsCount = 0;
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                // if color
                 if (Character.isLowerCase(board[i][j].charAt(0))) {
                     colorsCount++;
                 }
-                // if goal
                 else if (board[i][j].charAt(0) == 'G') {
                     goalsCount++;
                 }
@@ -495,8 +431,6 @@ public class MoveLogic {
             return true;
         }
 
-        // عمل مشكلة لما الالوان قعدت فوق الغوال
-        // // If colors and goals counts are not equal(case of open walls)
         // if (colorsCount != goalsCount) {
         // System.out.println("You Lost!");
         // return true;
@@ -519,13 +453,13 @@ public class MoveLogic {
         return ' ';
     }
 
-    public boolean doesNotContain(int row, int col) {// check if goal in visited walles
+    public boolean doesNotContain(int row, int col) {
         for (Point point : removedGoals) {
             if (point.row == row && point.col == col) {
-                return false; // found the point so it exists in the list
+                return false; 
             }
         }
-        return true; // point not found so it does not exist in the list
+        return true;
     }
 
     // 1 7 //1 0
@@ -559,7 +493,6 @@ public class MoveLogic {
 
     }
 
-    // this one to check if a point is in the recived points list
     public boolean isInMovableCells(int r, int c, List<Point> movableCells) {
         for (Point p : movableCells) {
             if (p.row == r && p.col == c) {
@@ -571,13 +504,11 @@ public class MoveLogic {
 
     public void ChangeBlankSquare(int r1, int c1, int r2, int c2, String[][] board) {
         int start, end, step;
-        // same col , up down case
         if (r1 != r2) {
             start = r1;
             end = r2;
             step = (r1 < r2) ? +1 : -1;
         }
-        // same row,so left right case
         else {
             start = c1;
             end = c2;
@@ -587,7 +518,6 @@ public class MoveLogic {
         Character closestColor = board[r1][c1].charAt(0);
 
         for (int i = start; i != end + step; i += step) {
-            // to know if im looping in rows or cols
             int rindex = r1 != r2 ? i : r1;
             int cindex = c1 != c2 ? i : c1;
             if (Character.isLowerCase(board[rindex][cindex].charAt(0))) {
@@ -598,47 +528,85 @@ public class MoveLogic {
         }
     }
 
-    public Map<Character, State> nexStates(boolean wannaPrint) {
+    public List<State> nexStates(boolean wannaPrint) {
         boolean testing = true;
-        // to go back to it
         State originalState = currentstate.copyState();
 
-        // Map< State,Character>posStateAndDirection=new LinkedHashMap<>();
-        Map<Character, State> possibleStates = new LinkedHashMap<>();
+        List<State> possibleStates = new ArrayList<>();
 
         State leftCase = moveAllColors('l', testing);
         if (!isEqual(leftCase, originalState)) {
-            possibleStates.put('l', leftCase);
+            possibleStates.add(leftCase);
         }
         currentstate = originalState.copyState();
 
         State rightCase = moveAllColors('r', testing);
         if (!isEqual(rightCase, originalState)) {
-            possibleStates.put('r', rightCase);
+            possibleStates.add(rightCase);
         }
         currentstate = originalState.copyState();
 
         State upCase = moveAllColors('u', testing);
         if (!isEqual(upCase, originalState)) {
-            possibleStates.put('u', upCase);
+            possibleStates.add(upCase);
         }
         currentstate = originalState.copyState();
 
         State downCase = moveAllColors('d', testing);
         if (!isEqual(downCase, originalState)) {
-            possibleStates.put('d', downCase);
+            possibleStates.add(downCase);
         }
         currentstate = originalState.copyState();
         // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
-        if (wannaPrint) {
-            for (char c : possibleStates.keySet()) {
-                System.out.println("In case of " + c + " :");
-                printBoard(possibleStates.get(c).board);
-            }
+        if(wannaPrint){
+           for (State s : possibleStates) {
+            printBoard(s.board);
+        } 
         }
+        
 
         return possibleStates;
     }
+
+    // public Map<Character, State> nexStates(boolean wannaPrint) {
+    //     boolean testing = true;
+    //     State originalState = currentstate.copyState();
+
+    //     Map<Character, State> possibleStates = new LinkedHashMap<>();
+
+    //     State leftCase = moveAllColors('l', testing);
+    //     if (!isEqual(leftCase, originalState)) {
+    //         possibleStates.put('l', leftCase);
+    //     }
+    //     currentstate = originalState.copyState();
+
+    //     State rightCase = moveAllColors('r', testing);
+    //     if (!isEqual(rightCase, originalState)) {
+    //         possibleStates.put('r', rightCase);
+    //     }
+    //     currentstate = originalState.copyState();
+
+    //     State upCase = moveAllColors('u', testing);
+    //     if (!isEqual(upCase, originalState)) {
+    //         possibleStates.put('u', upCase);
+    //     }
+    //     currentstate = originalState.copyState();
+
+    //     State downCase = moveAllColors('d', testing);
+    //     if (!isEqual(downCase, originalState)) {
+    //         possibleStates.put('d', downCase);
+    //     }
+    //     currentstate = originalState.copyState();
+    //     // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
+    //     if (wannaPrint) {
+    //         for (char c : possibleStates.keySet()) {
+    //             System.out.println("In case of " + c + " :");
+    //             printBoard(possibleStates.get(c).board);
+    //         }
+    //     }
+
+    //     return possibleStates;
+    // }
 
     public boolean isEqual(State s1, State s2) {
         // System.out.println("i am in isEqual");
