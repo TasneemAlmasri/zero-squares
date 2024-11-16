@@ -11,11 +11,12 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         int level = scanner.nextInt() - 1;
+        String[][] board = Boards.getBoard(level);
 
         System.out.println("Choose 1 for player mode or 2 for computer mode :");
         int mode=scanner.nextInt();
 
-        String[][] board = Boards.getBoard(level);
+        
         State initialState = new State(board);
         initialState.printBoard();
 

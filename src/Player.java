@@ -41,10 +41,6 @@ public class Player {
                     // currentState=moveLogic.moveAllColors('d');
                     path.add(moveLogic.moveAllColors('d',false));
                     break;
-                case '1':
-                    System.out.println("These are the possible moves: ");
-                    moveLogic.nexStates(true);
-                    break;
                 case 'p':
                     moveLogic.printPath(path);
                     break;

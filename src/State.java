@@ -1,5 +1,7 @@
 public class State {
 
+    State parent=null;
+
     String[][] board;
     
     public State(String[][] board) {

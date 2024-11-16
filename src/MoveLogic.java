@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MoveLogic {
     private State currentstate;
@@ -27,22 +25,19 @@ public class MoveLogic {
                         return new Point(row, i);
                     }
                 }
-            }
-            else if (direction == 'r') {
+            } else if (direction == 'r') {
                 for (int i = col + 1; i < board[row].length; i++) {
                     if (board[row][i].equals("W")) {
                         return new Point(row, i);
                     }
                 }
-            }
-            else if (direction == 'u') {
+            } else if (direction == 'u') {
                 for (int i = row - 1; i >= 0; i--) {
                     if (board[i][col].equals("W")) {
                         return new Point(i, col);
                     }
                 }
-            }
-            else if (direction == 'd') {
+            } else if (direction == 'd') {
                 for (int i = row + 1; i < board.length; i++) {
                     if (board[i][col].equals("W")) {
                         return new Point(i, col);
@@ -59,7 +54,7 @@ public class MoveLogic {
             start = Math.min(r1, r2);
             end = Math.max(r1, r2);
         }
-        
+
         else {
             start = Math.min(c1, c2);
             end = Math.max(c1, c2);
@@ -69,8 +64,7 @@ public class MoveLogic {
         for (int i = start + 1; i < end; i++) {
             int rindex = r1 != r2 ? i : r1;
             int cindex = c1 != c2 ? i : c1;
-            if (Character.isLowerCase(board[rindex][cindex].charAt(0))) 
-            {
+            if (Character.isLowerCase(board[rindex][cindex].charAt(0))) {
                 count++;
             }
         }
@@ -83,8 +77,7 @@ public class MoveLogic {
         if (r1 != r2) {
             start = Math.min(r1, r2);
             end = Math.max(r1, r2);
-        }
-        else {
+        } else {
             start = Math.min(c1, c2);
             end = Math.max(c1, c2);
         }
@@ -147,16 +140,14 @@ public class MoveLogic {
                 board[wallRow][wallCol - colorsCount - 1] = color;
             }
 
-        }
-        else {
+        } else {
             if (Math.abs(itsGoal.col - wallCol - 1) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
-            }
-            else {
+            } else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
@@ -198,16 +189,14 @@ public class MoveLogic {
                 board[wallRow][wallCol + colorsCount + 1] = color;
             }
 
-        }
-        else {
+        } else {
             if (Math.abs(itsGoal.col - 1 - wallCol) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
-            }
-            else {
+            } else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
@@ -248,16 +237,14 @@ public class MoveLogic {
                 board[wallRow + colorsCount + 1][wallCol] = color;
             }
 
-        }
-        else {
+        } else {
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
-            }
-            else {
+            } else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
@@ -307,8 +294,7 @@ public class MoveLogic {
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
-            }
-            else {
+            } else {
                 char old = wasGoal(r, c);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
@@ -337,7 +323,7 @@ public class MoveLogic {
         System.out.println();
     }
 
-    public State moveAllColors(char direction, boolean testing) {
+    public State moveAllColors(char direction, boolean fromNextState) {
         State newState = currentstate.copyState();
         String[][] board = newState.board;
         int rStart, rEnd, rStep;
@@ -394,11 +380,11 @@ public class MoveLogic {
             }
         }
         this.currentstate = newState;
-        if (!testing) {
+        if (!fromNextState) {
             newState.printBoard();
         }
 
-        if (isFinal(board, testing) && !testing) {
+        if (isFinal(board, fromNextState) && !fromNextState) {
             System.exit(0);
         }
         return newState;
@@ -412,8 +398,7 @@ public class MoveLogic {
             for (int j = 0; j < board[i].length; j++) {
                 if (Character.isLowerCase(board[i][j].charAt(0))) {
                     colorsCount++;
-                }
-                else if (board[i][j].charAt(0) == 'G') {
+                } else if (board[i][j].charAt(0) == 'G') {
                     goalsCount++;
                 }
             }
@@ -456,7 +441,7 @@ public class MoveLogic {
     public boolean doesNotContain(int row, int col) {
         for (Point point : removedGoals) {
             if (point.row == row && point.col == col) {
-                return false; 
+                return false;
             }
         }
         return true;
@@ -508,8 +493,7 @@ public class MoveLogic {
             start = r1;
             end = r2;
             step = (r1 < r2) ? +1 : -1;
-        }
-        else {
+        } else {
             start = c1;
             end = c2;
             step = (c1 < c2) ? +1 : -1;
@@ -529,87 +513,84 @@ public class MoveLogic {
     }
 
     public List<State> nexStates(boolean wannaPrint) {
-        boolean testing = true;
+        boolean fromNextState = true;
         State originalState = currentstate.copyState();
 
         List<State> possibleStates = new ArrayList<>();
 
-        State leftCase = moveAllColors('l', testing);
+        State leftCase = moveAllColors('l', fromNextState);
         if (!isEqual(leftCase, originalState)) {
             possibleStates.add(leftCase);
         }
         currentstate = originalState.copyState();
 
-        State rightCase = moveAllColors('r', testing);
+        State rightCase = moveAllColors('r', fromNextState);
         if (!isEqual(rightCase, originalState)) {
             possibleStates.add(rightCase);
         }
         currentstate = originalState.copyState();
 
-        State upCase = moveAllColors('u', testing);
+        State upCase = moveAllColors('u', fromNextState);
         if (!isEqual(upCase, originalState)) {
             possibleStates.add(upCase);
         }
         currentstate = originalState.copyState();
 
-        State downCase = moveAllColors('d', testing);
+        State downCase = moveAllColors('d', fromNextState);
         if (!isEqual(downCase, originalState)) {
             possibleStates.add(downCase);
         }
         currentstate = originalState.copyState();
         // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
-        if(wannaPrint){
-           for (State s : possibleStates) {
-            printBoard(s.board);
-        } 
+        if (wannaPrint) {
+            for (State s : possibleStates) {
+                printBoard(s.board);
+            }
         }
-        
 
         return possibleStates;
     }
 
-    // public Map<Character, State> nexStates(boolean wannaPrint) {
-    //     boolean testing = true;
-    //     State originalState = currentstate.copyState();
+    // public List<State> nexStates(State whoAreMyNextStates,boolean wannaPrint) {
+    // boolean fromNextState = true;
+    // State originalState = whoAreMyNextStates.copyState();
 
-    //     Map<Character, State> possibleStates = new LinkedHashMap<>();
+    // List<State> possibleStates = new ArrayList<>();
 
-    //     State leftCase = moveAllColors('l', testing);
-    //     if (!isEqual(leftCase, originalState)) {
-    //         possibleStates.put('l', leftCase);
-    //     }
-    //     currentstate = originalState.copyState();
+    // State leftCase = moveAllColors('l', fromNextState,whoAreMyNextStates);
+    // if (!isEqual(leftCase, originalState)) {
+    // possibleStates.add(leftCase);
+    // }
+    // currentstate = originalState.copyState();
 
-    //     State rightCase = moveAllColors('r', testing);
-    //     if (!isEqual(rightCase, originalState)) {
-    //         possibleStates.put('r', rightCase);
-    //     }
-    //     currentstate = originalState.copyState();
+    // State rightCase = moveAllColors('r', fromNextState,whoAreMyNextStates);
+    // if (!isEqual(rightCase, originalState)) {
+    // possibleStates.add(rightCase);
+    // }
+    // currentstate = originalState.copyState();
 
-    //     State upCase = moveAllColors('u', testing);
-    //     if (!isEqual(upCase, originalState)) {
-    //         possibleStates.put('u', upCase);
-    //     }
-    //     currentstate = originalState.copyState();
+    // State upCase = moveAllColors('u', fromNextState,whoAreMyNextStates);
+    // if (!isEqual(upCase, originalState)) {
+    // possibleStates.add(upCase);
+    // }
+    // currentstate = originalState.copyState();
 
-    //     State downCase = moveAllColors('d', testing);
-    //     if (!isEqual(downCase, originalState)) {
-    //         possibleStates.put('d', downCase);
-    //     }
-    //     currentstate = originalState.copyState();
-    //     // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
-    //     if (wannaPrint) {
-    //         for (char c : possibleStates.keySet()) {
-    //             System.out.println("In case of " + c + " :");
-    //             printBoard(possibleStates.get(c).board);
-    //         }
-    //     }
+    // State downCase = moveAllColors('d', fromNextState,whoAreMyNextStates);
+    // if (!isEqual(downCase, originalState)) {
+    // possibleStates.add(downCase);
+    // }
+    // currentstate = originalState.copyState();
+    // // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
+    // if(wannaPrint){
+    // for (State s : possibleStates) {
+    // printBoard(s.board);
+    // }
+    // }
 
-    //     return possibleStates;
+    // return possibleStates;
     // }
 
     public boolean isEqual(State s1, State s2) {
-        // System.out.println("i am in isEqual");
         String[][] board1 = s1.board;
         String[][] board2 = s2.board;
 
@@ -640,5 +621,14 @@ public class MoveLogic {
         for (State state : path) {
             printBoard(state.board);
         }
+    }
+
+    public boolean isVisited(List<State> path, State state) {
+        for (State s : path) {
+            if (isEqual(state, s)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -44,7 +44,7 @@ public class Boards {
             },
             // 5
             // two colors
-            { // Go is @723279cf
+            { 
                     { "W", "W", "W", "W", "W", "W", " ", " ", " " },
                     { "W", "Go", " ", " ", " ", "W", "W", " ", " " },
                     { "W", " ", " ", "Gb", " ", " ", "W", "W", "W" },
@@ -72,14 +72,14 @@ public class Boards {
                     { "W", "W", "W", "W", "W", " ", " ", " " },
             },
             // 8
-            // four colors
-            {
-                    { " ", " ", " ", "W", "W", "W", "W", " ", " " },
-                    { "W", "W", "W", "W", "o", "Gy", "W", "W", "W" },
-                    { "W", "Gb", "p", "b", " ", " ", " ", " ", "W" },
-                    { "W", " ", "g", "W", "Go", " ", "W", "y", "W" },
-                    { "W", "W", "W", "W", "W", "W", "W", "W", "W" },
-            },
+            // five colors
+        //     {
+        //             { " ", " ", " ", "W", "W", "W", "W", " ", " " },
+        //             { "W", "W", "W", "W", "o", "Gy", "W", "W", "W" },
+        //             { "W", "Gb", "p", "b", " ", " ", " ", " ", "W" },
+        //             { "W", " ", "g", "W", "Go", " ", "W", "y", "W" },
+        //             { "W", "W", "W", "W", "W", "W", "W", "W", "W" },
+        //     },
             // 9
             // four open walls
         //     {
@@ -144,6 +144,7 @@ public class Boards {
             return initBoards[level];
         } else {
             System.out.println("No Such level");
+            System.exit(0);
             return null;
         }
     }
