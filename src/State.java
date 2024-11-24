@@ -1,6 +1,7 @@
 public class State {
 
     State parent=null;
+    int cost=1;
 
     String[][] board;
     
