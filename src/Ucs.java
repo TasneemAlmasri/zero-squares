@@ -22,7 +22,7 @@ public class Ucs {
     Ucs(State iniState, int level) {
         this.currentState=iniState;
         queue.add(currentState);
-        System.out.println("now in the queue we have init"+queue.element().cost); 
+        // System.out.println("now in the queue we have init"+queue.element().cost); 
         this.moveLogic = new MoveLogic(iniState, level);
         this.level=level;
     }
