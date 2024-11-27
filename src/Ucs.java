@@ -5,8 +5,15 @@ import java.util.PriorityQueue;
 
 public class Ucs {
 
+    Comparator<State> costComparator = new Comparator<State>() {
+        @Override
+        public int compare(State p1, State p2) {
+            return Integer.compare(p1.cost, p2.cost);
+        }
+    };
+
     State currentState;
-    PriorityQueue<State>queue = new PriorityQueue<>();
+    PriorityQueue<State>queue = new PriorityQueue<>(costComparator);
     List<State> visited = new ArrayList<>();
     List<State> path = new ArrayList<>();
     MoveLogic moveLogic;
@@ -15,11 +22,13 @@ public class Ucs {
     Ucs(State iniState, int level) {
         this.currentState=iniState;
         queue.add(currentState);
+        System.out.println("now in the queue we have init"+queue.element().cost); 
         this.moveLogic = new MoveLogic(iniState, level);
         this.level=level;
     }
 
     List<State> ucsOn() {
+
         while (!queue.isEmpty()) {
             currentState = queue.poll();
             
@@ -39,11 +48,9 @@ public class Ucs {
 
                 for (State child : children) {
                     child.parent=currentState;
-                    child.cost+=child.parent.cost;
+                    child.cost=child.parent.cost+1;
                     if (!moveLogic.isVisited(visited,child )) {
                         queue.add(child);
-                        // بدنا المقارنة تكون حسب ال child cost
-                        // queue.comparator()//child.cost
 
                     }
                 }
