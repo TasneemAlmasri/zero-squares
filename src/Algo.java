@@ -18,13 +18,14 @@ public class Algo {
         Scanner scanner = new Scanner(System.in);
         MoveLogic moveLogic = new MoveLogic(initialState, level);
 
-        System.out.println("Please click :\n 1-for Dfs \n 2-for Bfs \n 3-for ucs \n 4-for recursive Dfs");
+        System.out.println("Please click :\n 1-for Dfs \n 2-for Bfs \n 3-for ucs \n 4-for recursive Dfs \n 5-for A*");
         int algo = scanner.nextInt();
 
         Dfs dfs = new Dfs(initialState, level);
         Bfs bfs = new Bfs(initialState, level);
         Ucs ucs = new Ucs(initialState, level);
         Recursive_Dfs rdfs = new Recursive_Dfs(initialState, level);
+        AStar astar = new AStar(initialState, level);
 
         switch (algo) {
             case 1:
@@ -47,6 +48,11 @@ public class Algo {
                 List<State> rDfsPath = rdfs.rdfsOn();
                 Collections.reverse(rDfsPath);
                 moveLogic.printPath(rDfsPath);
+                break;
+            case 5:
+                List<State> astarPath = astar.aStarOn();
+                Collections.reverse(astarPath);
+                moveLogic.printPath(astarPath);
                 break;
 
             default:
