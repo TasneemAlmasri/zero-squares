@@ -22,6 +22,7 @@ public class AStar {
     AStar(State iniState, int level) {
          heur=new Heuristic();
         this.currentState=iniState;
+        currentState.huer=heur.getHeuristic(currentState);
         queue.add(currentState);
         // System.out.println("now in the queue we have init"+queue.element().cost); 
         this.moveLogic = new MoveLogic(iniState, level);
@@ -52,6 +53,7 @@ public class AStar {
                     child.parent=currentState;
                     child.cost=child.parent.cost+1;
 
+                    child.huer=heur.getHeuristic(child);
                     child.heuCost=heur.getHeuristic(child)+child.cost;
                     
                     if (!moveLogic.isVisited(visited,child )) {

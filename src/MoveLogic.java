@@ -619,6 +619,7 @@ public class MoveLogic {
         }
         System.out.println("This is the path you took");
         for (State state : path) {
+            System.out.println(state.huer);
             printBoard(state.board);
         }
     }
