@@ -18,8 +18,10 @@ public class Ucs {
     List<State> path = new ArrayList<>();
     MoveLogic moveLogic;
     int level;
+    Cost cost;
 
     Ucs(State iniState, int level) {
+        cost=new Cost(level);
         this.currentState=iniState;
         queue.add(currentState);
         // System.out.println("now in the queue we have init"+queue.element().cost); 
@@ -48,7 +50,7 @@ public class Ucs {
 
                 for (State child : children) {
                     child.parent=currentState;
-                    child.cost=child.parent.cost+1;
+                    child.cost=child.parent.cost+cost.getCost(child.board, child.parent.board);
                     if (!moveLogic.isVisited(visited,child )) {
                         queue.add(child);
 

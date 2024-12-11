@@ -10,7 +10,6 @@ public class Cost {
 
     public int getCost(String[][] b1, String[][] b2) {
 
-        System.out.println("iam in get cost");
         Map<Character,Point> b1colors = new HashMap<>();
         Map<Character,Point> b2colors = new HashMap<>();
 
@@ -25,7 +24,6 @@ public class Cost {
                 }
             }
         }
-        System.out.println("b1colors is "+b1colors.size()+"b2colors is "+b2colors.size());
 
         int cost=0;
 

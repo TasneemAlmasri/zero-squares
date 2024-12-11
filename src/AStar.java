@@ -53,7 +53,7 @@ public class AStar {
                 for (State child : children) {
 
                     child.parent=currentState;
-                    child.cost=child.parent.cost+cost.getCost(child.board, currentState.board);
+                    child.cost=child.parent.cost+cost.getCost(child.board, child.parent.board);
 
                     child.huer=heur.getHeuristic(child);
                     child.heuCost=heur.getHeuristic(child)+child.cost;
