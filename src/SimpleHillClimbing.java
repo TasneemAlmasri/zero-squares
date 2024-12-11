@@ -20,7 +20,7 @@ public class SimpleHillClimbing {
         while (true) {
             State parent = currentState;
 
-            if (moveLogic.isFinal(currentState.board, false)) {
+            if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
                 path.add(currentState);
                 while (currentState.parent != null) {
                     currentState = currentState.parent;

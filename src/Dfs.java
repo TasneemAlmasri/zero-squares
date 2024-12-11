@@ -34,7 +34,7 @@ public class Dfs {
             // continue;
             // }
 
-            if (moveLogic.isFinal(currentState.board, false)) {
+            if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
                 // System.out.println("i am in the if final case");
                 path.add(currentState);
                 while (currentState.parent != null) {
@@ -89,7 +89,7 @@ public class Dfs {
 // // count++;
 // currentState = stack.pop();
 
-// if (moveLogic.isFinal(currentState.board, false)) {
+// if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
 // // System.out.println("i am in the if final case");
 // path.add(currentState);
 // while (currentState.parent != null) {

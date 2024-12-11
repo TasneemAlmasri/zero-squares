@@ -18,9 +18,11 @@ public class AStar {
     MoveLogic moveLogic;
     int level;
     Heuristic heur;
+    Cost cost;
 
     AStar(State iniState, int level) {
          heur=new Heuristic();
+         cost=new Cost(level);
         this.currentState=iniState;
         currentState.huer=heur.getHeuristic(currentState);
         queue.add(currentState);
@@ -34,11 +36,11 @@ public class AStar {
         while (!queue.isEmpty()) {
             currentState = queue.poll();
             
-            System.out.println("gonna add this to visited");
-            moveLogic.printBoard(currentState.board);
+            // System.out.println("gonna add this to visited");
+            // moveLogic.printBoard(currentState.board);
             visited.add(currentState);
 
-            if (moveLogic.isFinal(currentState.board, false)) {
+            if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
                 path.add(currentState);
                 while (currentState.parent != null) {
                     currentState = currentState.parent;
@@ -51,7 +53,7 @@ public class AStar {
                 for (State child : children) {
 
                     child.parent=currentState;
-                    child.cost=child.parent.cost+1;
+                    child.cost=child.parent.cost+cost.getCost(child.board, currentState.board);
 
                     child.huer=heur.getHeuristic(child);
                     child.heuCost=heur.getHeuristic(child)+child.cost;

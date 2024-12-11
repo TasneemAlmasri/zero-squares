@@ -4,12 +4,12 @@ import java.util.List;
 public class MoveLogic {
     private State currentstate;
     private int level;
+    // List<Point> removedGoals;
 
     public MoveLogic(State initialState, int level) {
         this.currentstate = initialState;
         this.level = level;
-        // System.out.println("LEVEL
-        // ISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs"+level);
+        // this.removedGoals =currentstate.removedGoals;
     }
 
     Point findClosestWall(int row, int col, char direction, String[][] board) {
@@ -92,7 +92,7 @@ public class MoveLogic {
 
     }
 
-    boolean canMove(int r, int c, char direction, String[][] board) {
+    boolean canMove(int r, int c, char direction, String[][] board,List<Point> removedGoals) {
         // System.out.println("IAM IN CAN MOVE AND THE ONE MOVING IS " + r + " " + c);
         switch (direction) {
             case 'l':
@@ -112,9 +112,10 @@ public class MoveLogic {
         }
     }
 
-    List<Point> removedGoals = new ArrayList<>();
+    // List<Point> removedGoals = new ArrayList<>();
+    
 
-    void moveOneColorRight(int r, int c, String color, String[][] board, List<Point> movableCells) {
+    void moveOneColorRight(int r, int c, String color, String[][] board,List<Point> removedGoals, List<Point> movableCells) {
 
         Point closeWall = findClosestWall(r, c, 'r', board);
         int wallRow = (closeWall.row == -1) ? r : closeWall.row;
@@ -134,7 +135,7 @@ public class MoveLogic {
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
         if (itsGoal.row == -1) {
-            char old = wasGoal(r, c);
+            char old = wasGoal(r, c,removedGoals);
             board[r][c] = (old == ' ') ? " " : "G" + old;
             if (closeWall.col != -1) {
                 board[wallRow][wallCol - colorsCount - 1] = color;
@@ -142,13 +143,13 @@ public class MoveLogic {
 
         } else {
             if (Math.abs(itsGoal.col - wallCol - 1) >= colorsCount) {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             } else {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
                     // it will meet the goal
@@ -162,7 +163,7 @@ public class MoveLogic {
         }
     }
 
-    void moveOneColorLeft(int r, int c, String color, String[][] board, List<Point> movableCells) {
+    void moveOneColorLeft(int r, int c, String color, String[][] board,List<Point> removedGoals, List<Point> movableCells) {
 
         Point closeWall = findClosestWall(r, c, 'l', board);
         int wallRow = (closeWall.row == -1) ? r : closeWall.row;
@@ -183,7 +184,7 @@ public class MoveLogic {
 
         if (itsGoal.row == -1) {
             // System.out.println("case no goal");
-            char old = wasGoal(r, c);
+            char old = wasGoal(r, c,removedGoals);
             board[r][c] = (old == ' ') ? " " : "G" + old;
             if (closeWall.col != -1) {
                 board[wallRow][wallCol + colorsCount + 1] = color;
@@ -191,13 +192,13 @@ public class MoveLogic {
 
         } else {
             if (Math.abs(itsGoal.col - 1 - wallCol) >= colorsCount) {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             } else {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.row == -1) {
                     board[itsGoal.row][itsGoal.col] = " ";
@@ -211,7 +212,7 @@ public class MoveLogic {
         }
     }
 
-    void moveOneColorUp(int r, int c, String color, String[][] board, List<Point> movableCells) {
+    void moveOneColorUp(int r, int c, String color, String[][] board,List<Point> removedGoals, List<Point> movableCells) {
 
         Point closeWall = findClosestWall(r, c, 'u', board);
         int wallRow = (closeWall.row == -1) ? 0 : closeWall.row;
@@ -231,7 +232,7 @@ public class MoveLogic {
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
         if (itsGoal.row == -1) {
-            char old = wasGoal(r, c);
+            char old = wasGoal(r, c,removedGoals);
             board[r][c] = (old == ' ') ? " " : "G" + old;
             if (closeWall.col != -1) {
                 board[wallRow + colorsCount + 1][wallCol] = color;
@@ -239,13 +240,13 @@ public class MoveLogic {
 
         } else {
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             } else {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
                     board[itsGoal.row][itsGoal.col] = " ";
@@ -259,7 +260,7 @@ public class MoveLogic {
         }
     }
 
-    void moveOneColorDown(int r, int c, String color, String[][] board, List<Point> movableCells) {
+    void moveOneColorDown(int r, int c, String color, String[][] board,List<Point> removedGoals, List<Point> movableCells) {
 
         Point closeWall = findClosestWall(r, c, 'd', board);
         int wallRow = (closeWall.row == -1) ? board.length - 1 : closeWall.row;
@@ -279,7 +280,7 @@ public class MoveLogic {
         ChangeBlankSquare(r, c, wallRow, wallCol, board);
 
         if (itsGoal.row == -1) {
-            char old = wasGoal(r, c);
+            char old = wasGoal(r, c,removedGoals);
             board[r][c] = (old == ' ') ? " " : "G" + old;
             if (closeWall.col != -1) {
                 board[wallRow - colorsCount - 1][wallCol] = color;
@@ -289,13 +290,13 @@ public class MoveLogic {
 
         else {
             if (Math.abs(itsGoal.row - wallRow - 1) >= colorsCount) {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 board[itsGoal.row][itsGoal.col] = " ";
                 removedGoals.add(new Point(itsGoal.row, itsGoal.col));
                 System.out.println("The Color " + color + " met its goal");
             } else {
-                char old = wasGoal(r, c);
+                char old = wasGoal(r, c,removedGoals);
                 board[r][c] = (old == ' ') ? " " : "G" + old;
                 if (closeWall.col == -1) {
                     board[itsGoal.row][itsGoal.col] = " ";
@@ -326,6 +327,7 @@ public class MoveLogic {
     public State moveAllColors(char direction, boolean fromNextState) {
         State newState = currentstate.copyState();
         String[][] board = newState.board;
+        List<Point> removedGoals=newState.removedGoals;
         int rStart, rEnd, rStep;
         int cStart, cEnd, cStep;
 
@@ -350,7 +352,7 @@ public class MoveLogic {
         for (int i = rStart; i != rEnd; i += rStep) {
             for (int j = cStart; j != cEnd; j += cStep) {
                 if (Character.isLowerCase(board[i][j].charAt(0))) {
-                    if (canMove(i, j, direction, board)) {
+                    if (canMove(i, j, direction, board,removedGoals)) {
                         movableCells.add(new Point(i, j));
                     }
                 }
@@ -362,19 +364,19 @@ public class MoveLogic {
             int j = p.col;
             switch (direction) {
                 case 'r':
-                    moveOneColorRight(i, j, board[i][j], board, movableCells);
+                    moveOneColorRight(i, j, board[i][j], board,removedGoals, movableCells);
                     // printBoard(board);
                     break;
                 case 'l':
-                    moveOneColorLeft(i, j, board[i][j], board, movableCells);
+                    moveOneColorLeft(i, j, board[i][j], board,removedGoals, movableCells);
                     // printBoard(board);
                     break;
                 case 'u':
-                    moveOneColorUp(i, j, board[i][j], board, movableCells);
+                    moveOneColorUp(i, j, board[i][j], board,removedGoals, movableCells);
                     // printBoard(board);
                     break;
                 case 'd':
-                    moveOneColorDown(i, j, board[i][j], board, movableCells);
+                    moveOneColorDown(i, j, board[i][j], board,removedGoals, movableCells);
                     // printBoard(board);
                     break;
             }
@@ -384,13 +386,13 @@ public class MoveLogic {
             newState.printBoard();
         }
 
-        if (isFinal(board, fromNextState) && !fromNextState) {
+        if (isFinal(board,removedGoals, fromNextState) && !fromNextState) {
             System.exit(0);
         }
         return newState;
     }
 
-    public boolean isFinal(String[][] board, boolean testing) {
+    public boolean isFinal(String[][] board,List<Point> removedGoals, boolean testing) {
         int colorsCount = 0;
         int goalsCount = 0;
 
@@ -426,11 +428,11 @@ public class MoveLogic {
 
     // .......................................................................................................
 
-    public char wasGoal(int r, int c) {
+    public char wasGoal(int r, int c,List<Point> removedGoals) {
         // System.out.println("I AM IN THE WASGOAL ");
         String theGoal = Boards.getGoal(r, c, level);
 
-        if (!theGoal.isEmpty() && doesNotContain(r, c)) {
+        if (!theGoal.isEmpty() && doesNotContain(r, c,removedGoals)) {
             // System.out.println("i am in the IF");
             return theGoal.charAt(1);
 
@@ -438,7 +440,7 @@ public class MoveLogic {
         return ' ';
     }
 
-    public boolean doesNotContain(int row, int col) {
+    public boolean doesNotContain(int row, int col,List<Point> removedGoals) {
         for (Point point : removedGoals) {
             if (point.row == row && point.col == col) {
                 return false;
@@ -551,45 +553,6 @@ public class MoveLogic {
         return possibleStates;
     }
 
-    // public List<State> nexStates(State whoAreMyNextStates,boolean wannaPrint) {
-    // boolean fromNextState = true;
-    // State originalState = whoAreMyNextStates.copyState();
-
-    // List<State> possibleStates = new ArrayList<>();
-
-    // State leftCase = moveAllColors('l', fromNextState,whoAreMyNextStates);
-    // if (!isEqual(leftCase, originalState)) {
-    // possibleStates.add(leftCase);
-    // }
-    // currentstate = originalState.copyState();
-
-    // State rightCase = moveAllColors('r', fromNextState,whoAreMyNextStates);
-    // if (!isEqual(rightCase, originalState)) {
-    // possibleStates.add(rightCase);
-    // }
-    // currentstate = originalState.copyState();
-
-    // State upCase = moveAllColors('u', fromNextState,whoAreMyNextStates);
-    // if (!isEqual(upCase, originalState)) {
-    // possibleStates.add(upCase);
-    // }
-    // currentstate = originalState.copyState();
-
-    // State downCase = moveAllColors('d', fromNextState,whoAreMyNextStates);
-    // if (!isEqual(downCase, originalState)) {
-    // possibleStates.add(downCase);
-    // }
-    // currentstate = originalState.copyState();
-    // // System.out.println("holaaaaaaaaaa, length isss " + possibleStates.size());
-    // if(wannaPrint){
-    // for (State s : possibleStates) {
-    // printBoard(s.board);
-    // }
-    // }
-
-    // return possibleStates;
-    // }
-
     public boolean isEqual(State s1, State s2) {
         String[][] board1 = s1.board;
         String[][] board2 = s2.board;
@@ -619,7 +582,7 @@ public class MoveLogic {
         }
         System.out.println("This is the path you took");
         for (State state : path) {
-            System.out.println(state.huer);
+            System.out.println(state.cost);
             printBoard(state.board);
         }
     }

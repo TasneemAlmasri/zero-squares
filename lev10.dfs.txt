@@ -1,0 +1,34 @@
+Dfs:
+Visited states count is 304
+Path length is 80
+DFS Time Taken: 105 ms
+
+
+Bfs:
+Visited states count is 301
+Path length is 45
+BFS Time Taken: 40 ms
+
+
+Ucs:
+Visited states count is 769
+Path length is 45
+UCS Time Taken: 127 ms
+
+
+Recursive dfs:
+Visited states count is 155
+Path length is 83
+Recursive DFS Time Taken: 9 ms
+
+
+A*:
+Visited states count is 570
+Path length is 45
+A* Time Taken: 247 ms
+
+
+steepest hill climbing :
+Path length is 5
+Hill Climbing Time Taken: 1 ms
+

@@ -28,7 +28,7 @@ public class Recursive_Dfs {
 
         visited.add(currentState);
 
-        if (moveLogic.isFinal(currentState.board, false)) {
+        if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
             path.add(currentState);
             
             while (currentState.parent != null) {

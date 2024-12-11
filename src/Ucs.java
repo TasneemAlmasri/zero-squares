@@ -32,11 +32,11 @@ public class Ucs {
         while (!queue.isEmpty()) {
             currentState = queue.poll();
             
-            System.out.println("gonna add this to visited");
-            moveLogic.printBoard(currentState.board);
+            // System.out.println("gonna add this to visited");
+            // moveLogic.printBoard(currentState.board);
             visited.add(currentState);
 
-            if (moveLogic.isFinal(currentState.board, false)) {
+            if (moveLogic.isFinal(currentState.board,currentState.removedGoals, false)) {
                 path.add(currentState);
                 while (currentState.parent != null) {
                     currentState = currentState.parent;

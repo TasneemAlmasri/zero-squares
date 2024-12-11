@@ -1,0 +1,1803 @@
+
+Choose a level : 
+Choose 1 for player mode or 2 for computer mode :
+         W  W  W  W        
+W  W  W  W  o  Gy W  W  W  
+W  Gb p  b           y  W  
+W  g  Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+Please click :
+ 1-for Dfs 
+ 2-for Bfs 
+ 3-for ucs 
+ 4-for recursive Dfs 
+ 5-for A* 
+ 6-for steepst hill climbing 
+7-for simple hill climbing
+Dfs:
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  o  Gy W  W  W  
+W  Gb p  b           y  W  
+W  g  Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color p met its goal
+The Color o met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb    b              W  
+W  g     W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g     b           y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          g  b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W        W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb             b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                    y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W        W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                    y  W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                    y  W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W        W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y     W  g     W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     y  W  Go g  W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb y                 W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                y  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     Gp W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     Gp W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  Gb                y  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  Gp W  g     W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  Gp W  g     W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                y  W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W        W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W        W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  Gb                y  W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W        W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W        W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                    y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W        W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W        W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W        W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                b  W  
+W        W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                       W  
+W        W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                       W  
+W        W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W        W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb             b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g              b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W  g     W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W     g  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb g              b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g  b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                 b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W  g  Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W  g  Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                 y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     g  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb g              y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g     W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  y                 W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  y  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  y                 W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     g  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W     g              y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                 g  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                 g     W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                    g  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b                 W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  b  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b              y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g              b  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W  g  Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          g  b  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W     Gp W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb             b  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                    y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                    y  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                    y  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W  Go g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                    y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     Gp W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W  y                    W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W     Gp W     g  W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb                b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  g  Gy W  W  W  
+W                       W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W                       W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W  g     W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     g  W  W  W  
+W  Gb             b  y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b  y              W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb    y              W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b                 W  
+W  g  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 b  W  
+W     g  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  g  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  g              b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y              g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g     W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W     y  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y              g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             y  g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                 b  W  
+W  y  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g  b  W  
+W     y  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g     W  
+W     y  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y           g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          y  g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g     W  
+W     Gp W     y  W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             g     W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                    W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W  g  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g  b                 W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W     g  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb g              b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                    W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W     Gp W     y  W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W     Gp W  y     W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  Gp W  y     W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  y  Gy W  W  W  
+W  g                 b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             g  b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             g     W  
+W     Gp W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                g  W  
+W     Gp W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                    W  
+W     Gp W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W  g  Gp W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g  b                 W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W  g  b  W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W     g  W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb g              b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                    W  
+W     Gp W  Go    W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  g                 b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  y  Gy W  W  W  
+W  g  b                 W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  b  W  y     W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  b  W  Go y  W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     g  W  Go y  W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W  y  Gy W  W  W  
+W  g                 b  W  
+W     Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W     Gp W  Go y  W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W     Gp W  y     W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y           g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b                 W  
+W  y  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W  y  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W  y  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color g met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  b  W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b                 W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 b  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             y  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             y     W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b                 W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     y  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y              b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             y  b  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b              g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color g met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y              b  g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color g met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W  y  Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y              b     W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W     y  W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y              b  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W  y  Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     y  W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y                 W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W     y  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y                 W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     y  W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W     y                 W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                    y  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                    y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W                       W  
+W  y  Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          y  b  g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color y met its goal
+The Color g met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W     Gp W     y  W     W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+The Color y met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             b     W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                b  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+The Color b met its goal
+gonna add this to visited
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W                       W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+You Lost!
+
+
+Visited states count is 205
+Path length is 42
+DFS Time Taken: 192 ms
+
+This is the path you took
+0
+         W  W  W  W        
+W  W  W  W  o  Gy W  W  W  
+W  Gb p  b           y  W  
+W  g  Gp W  Go    W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb    b              W  
+W  g     W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g     b           y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          g  b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g              b  y  W  
+W        W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W  g     W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                b  W  
+W     g  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb g              b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g  b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                 b  W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b                 W  
+W     Gp W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  g  b  W        W  y  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b              y  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b  y              W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb    y              W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                y  W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                    W  
+W  g  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b                 W  
+W  g  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 b  W  
+W     g  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                   W  
+W  y  g  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  g              b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y              g  b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             g     W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W     y  W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb y              g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             y  g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y                 g  W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W  y  Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                 b  W  
+W  y  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g  b                 W  
+W  y  Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  g                    W  
+W  y  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb                g  W  
+W  y  b  W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y  b              g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  y              b  g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb          y  b  g  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W     Gy W  W  W  
+W  Gb             b     W  
+W     Gp W     y  W     W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb             b     W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                b  W  
+W     Gp W        W     W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                   W  
+W     Gp W        W  b  W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W  Gb                b  W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
+0
+         W  W  W  W        
+W  W  W  W        W  W  W  
+W                       W  
+W     Gp W        W  Gg W  
+W  W  W  W  W  W  W  W  W  
+
